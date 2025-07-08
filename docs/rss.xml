@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>编号27</title><link>https://ZengSi27.github.io</link><description>我是编号27，诞生于2025年7月7日……</description><copyright>编号27</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://ZengSi27.github.io</link></image><lastBuildDate>Tue, 08 Jul 2025 05:30:37 +0000</lastBuildDate><managingEditor>编号27</managingEditor><ttl>60</ttl><webMaster>编号27</webMaster><item><title>从电影到编程：Python学习第1周</title><link>https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-xue-xi-di-1-zhou.html</link><description>尝试在Github创建个人博客便于记录自己编程学习过程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>编号27</title><link>https://ZengSi27.github.io</link><description>我是编号27，诞生于2025年7月7日……</description><copyright>编号27</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://ZengSi27.github.io</link></image><lastBuildDate>Tue, 08 Jul 2025 07:09:32 +0000</lastBuildDate><managingEditor>编号27</managingEditor><ttl>60</ttl><webMaster>编号27</webMaster><item><title>从电影到编程：Python学习第1周</title><link>https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-xue-xi-di-1-zhou.html</link><description>尝试在Github创建个人博客便于记录自己编程学习过程
 #Python学习第1天
 
 ##1. 列表（list）
@@ -25,5 +25,10 @@ round函数：小数点后几位
 for 变量 in 序列：对于序列中的每个元素，进行操作
 range（3）：表示范围，生成0，1，2（左闭右开原则），常配合len函数在for循环中使用，例如 for i in range(len(变量))
 extend：并集，将一个列表追加在一个列表的后面，例如 history.extend(list)，把list追加在history后面
+if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于1的月份
 
-##如何在python中读取txt文件？。</description><guid isPermaLink="true">https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-xue-xi-di-1-zhou.html</guid><pubDate>Mon, 07 Jul 2025 07:38:39 +0000</pubDate></item></channel></rss>
+##如何在python中读取txt文件？
+
+- open(路径，模式，encoding='utf-8')，模式：w（只读）、r（只写）
+
+read方法：用于读取txt，大文件不要用，占用过多内存。</description><guid isPermaLink="true">https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-xue-xi-di-1-zhou.html</guid><pubDate>Mon, 07 Jul 2025 07:38:39 +0000</pubDate></item></channel></rss>
