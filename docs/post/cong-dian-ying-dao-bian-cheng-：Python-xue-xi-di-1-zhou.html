@@ -174,8 +174,34 @@ if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于
 </ul>
 <h1>Python学习第3天——Pandas</h1>
 <h2>1.如何读取数据</h2>
+<p>csv/tsv/txt、excel、mysql三种文件方法不同</p>
+<ul>
+<li>1.1 csv<br>
+fpath = "路径"<br>
+pd.read_csv(fpath) 读取数据<br>
+.head() 查看前几行<br>
+.shape 查看形状（行数、列数）<br>
+.columns 查看列名列表<br>
+.index 查看索引列<br>
+.dtypes 查看数据类型</li>
+<li>1.2 excel<br>
+pd.read_excel(fpath)</li>
+<li>1.3 mysql<br>
+pd.read_sql("", )</li>
+</ul>
 <h2>2.数据结构（Series和Dataframe）</h2>
-<h2>3.查询数据</h2></div>
+<p>Series:一维数据，一行或一列，可以理解为字典<br>
+DataFrame:二维数据，有行有列，可以理解为excel</p>
+<h2>3.查询数据</h2>
+<ul>
+<li>3.1 df.loc查询数据的方法<br>
+1.使用单个label值查询<br>
+2.使用值列表批量查询<br>
+3.使用区间[:]范围查询<br>
+补充：df.loc[1,3] 查询行，包括3（与python不同）<br>
+4.使用条件表达式查询<br>
+5.调用函数查询</li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
