@@ -173,34 +173,59 @@ if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于
 <li>def：根据需求，确定有无参数，有无返回值（return）</li>
 </ul>
 <h1>Python学习第3天——Pandas</h1>
-<h2>1.如何读取数据</h2>
-<p>csv/tsv/txt、excel、mysql三种文件方法不同</p>
+<h2>1.如何读取和导出数据</h2>
+<p>csv/tsv/txt、excel、mysql三种文件读取方法不同</p>
 <ul>
 <li>1.1 csv<br>
-fpath = "路径"<br>
-pd.read_csv(fpath) 读取数据<br>
-.head() 查看前几行<br>
+fpath =( "路径")<br>
+同一文件夹下直接输入文件名即可读取</li>
+</ul>
+<p>pd.read_csv(fpath) 读取数据<br>
+, converters={'uid' : str}加在fpath后面可以把uid这列按照“字符串”类型读取<br>
+另一种方式是用 .astype(str) 方法</p>
+<p>.head() 查看前几行<br>
 .shape 查看形状（行数、列数）<br>
 .columns 查看列名列表<br>
 .index 查看索引列<br>
-.dtypes 查看数据类型</li>
-<li>1.2 excel<br>
-pd.read_excel(fpath)</li>
-<li>1.3 mysql<br>
-pd.read_sql("", )</li>
+.dtypes 查看数据类型</p>
+<ul>
+<li>
+<p>1.2 excel<br>
+pd.read_excel(fpath)</p>
+</li>
+<li>
+<p>1.3 mysql<br>
+pd.read_sql("", )</p>
+</li>
+<li>
+<p>1.4导出数据<br>
+.to_excel('test excel.xlsx', index = False)导出到同一文件夹下，index = False 是删除第一列索引列</p>
+</li>
 </ul>
 <h2>2.数据结构（Series和Dataframe）</h2>
 <p>Series:一维数据，一行或一列，可以理解为字典<br>
 DataFrame:二维数据，有行有列，可以理解为excel</p>
 <h2>3.查询数据</h2>
+<p>excel['id']查询id这一列的数据，类似python字典<br>
+excel.iloc[1]查询第二行数据</p>
 <ul>
-<li>3.1 df.loc查询数据的方法<br>
+<li>
+<p>3.1 df.loc查询数据的方法<br>
 1.使用单个label值查询<br>
 2.使用值列表批量查询<br>
 3.使用区间[:]范围查询<br>
 补充：df.loc[1,3] 查询行，包括3（与python不同）<br>
-4.使用条件表达式查询<br>
-5.调用函数查询</li>
+4.使用条件表达式查询（布尔索引）<br>
+excel[excel['progress']&gt;= 100000 ]会返回一个符合条件的dataframe<br>
+5.调用函数查询</p>
+</li>
+<li>
+<p>数据筛选的补充<br>
+excel.drop_duplicates(subset='uid', keep = 'last', inplace = True )删除重复值<br>
+subset='uid' 删除uid这列的重复的值<br>
+keep = 'last' 仅保留最后一个值<br>
+inplace = True 替换整个列表，false的话是不替换仅展示</p>
+</li>
 </ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 

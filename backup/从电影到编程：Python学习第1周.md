@@ -41,12 +41,16 @@ read方法：用于读取txt，大文件不要用，占用过多内存。read之
 
 # Python学习第3天——Pandas
 
-## 1.如何读取数据
-csv/tsv/txt、excel、mysql三种文件方法不同
-
+## 1.如何读取和导出数据
+csv/tsv/txt、excel、mysql三种文件读取方法不同
 - 1.1 csv
-fpath = "路径"
+fpath =( "路径") 
+同一文件夹下直接输入文件名即可读取
+
 pd.read_csv(fpath) 读取数据
+, converters={'uid' : str}加在fpath后面可以把uid这列按照“字符串”类型读取
+另一种方式是用 .astype(str) 方法
+
 .head() 查看前几行
 .shape 查看形状（行数、列数）
 .columns 查看列名列表
@@ -57,16 +61,28 @@ pd.read_excel(fpath)
 - 1.3 mysql
 pd.read_sql("", )
 
+- 1.4导出数据
+.to_excel('test excel.xlsx', index = False)导出到同一文件夹下，index = False 是删除第一列索引列
+
 ## 2.数据结构（Series和Dataframe）
 Series:一维数据，一行或一列，可以理解为字典
 DataFrame:二维数据，有行有列，可以理解为excel
 
 ## 3.查询数据
+excel['id']查询id这一列的数据，类似python字典
+excel.iloc[1]查询第二行数据
+
 - 3.1 df.loc查询数据的方法
 1.使用单个label值查询
 2.使用值列表批量查询
 3.使用区间[:]范围查询
 补充：df.loc[1,3] 查询行，包括3（与python不同）
-4.使用条件表达式查询
+4.使用条件表达式查询（布尔索引）
+excel[excel['progress']>= 100000 ]会返回一个符合条件的dataframe
 5.调用函数查询
 
+- 数据筛选的补充
+excel.drop_duplicates(subset='uid', keep = 'last', inplace = True )删除重复值
+subset='uid' 删除uid这列的重复的值
+keep = 'last' 仅保留最后一个值
+ inplace = True 替换整个列表，false的话是不替换仅展示
