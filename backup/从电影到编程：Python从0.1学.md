@@ -103,12 +103,12 @@ right_on: 右边的key
 参考视频课程链接：https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&vd_source=12234dcd5ca10446ab2cc18135e10a62&p=13
 
 
-#SQL从0开始
-##1、select和from
+# SQL从0开始
+## 1、select和from
 语法结构：select--from--where--group by--having--order by--limit
 运行顺序：from--where--group by--having--order by--limit--select（弟中弟）
 
-##2、where
+## 2、where
 用于限定from的对象，可用数学运算和逻辑运算符号（需要注意in的用法）
 
 模糊查询：
@@ -127,7 +127,7 @@ and name like '%u%'
 and name not like '% %'`
 可以简化为？这里怎么简化呢
 
-##3、order by排序
+## 3、order by排序
 默认升序（从小到大）
 
 例题：查询1984年所有获奖者的姓名和奖项科目。结果将诺贝尔化学奖和物理学奖排在最后，然后按照科目排序，再按照获奖者姓名排序
@@ -139,9 +139,9 @@ from nobel
 where yr = 1984
 order by subject in ('chemistry','physics') , subject, winner` 这里的in的使用，让后面两个科目返回的值为1，默认排在0后面
 
-##4、limit
+## 4、limit
 
-##5、聚合函数和group by
+## 5、聚合函数和group by
 例题：查询2013至2015年每年每个科目的获奖人数，结果按年份从大到小，人数从大到小排序
 我的答案：
 select yr, subject, count(winner) 获奖人数
@@ -150,7 +150,7 @@ where yr between 2013 and 2015
 group by yr,subject
 order by yr desc,count(winner) desc
 
-##6、having和简单运行原理
+## 6、having和简单运行原理
 having是聚合后筛选，where是聚合前筛选
 
 例题：查询总人口数至少为3亿的大洲和其平均gdp，其中只有gdp高于200亿且人口数大于6000万或者gdp低于80亿且首都中含有三个a的国家的计入计算，最后按国家数从大到小排序，只显示第一行
@@ -163,6 +163,6 @@ having sum(population)>=300000000
 order by count(name) desc
 limit 1`
 
-##7、其他常见函数
+## 7、其他常见函数
 round(x,y)——四舍五入
 concat(s1,s2,...)——连接字符串函数

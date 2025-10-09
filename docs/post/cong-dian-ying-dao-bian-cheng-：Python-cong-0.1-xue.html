@@ -239,12 +239,12 @@ on: 左右都需要有这个key<br>
 left_on: 左边的key<br>
 right_on: 右边的key</p>
 <p>参考视频课程链接：<a href="https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13" rel="nofollow">https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13</a></p>
-<p>#SQL从0开始<br>
-##1、select和from<br>
-语法结构：select--from--where--group by--having--order by--limit<br>
+<h1>SQL从0开始</h1>
+<h2>1、select和from</h2>
+<p>语法结构：select--from--where--group by--having--order by--limit<br>
 运行顺序：from--where--group by--having--order by--limit--select（弟中弟）</p>
-<p>##2、where<br>
-用于限定from的对象，可用数学运算和逻辑运算符号（需要注意in的用法）</p>
+<h2>2、where</h2>
+<p>用于限定from的对象，可用数学运算和逻辑运算符号（需要注意in的用法）</p>
 <p>模糊查询：<br>
 第一种是 like 'C%ia' 寻找C字母开头，ia字母结尾的国家名称<br>
 第二种是占位符 like '_t%' 查询国家名中第二个字符为't'的国家</p>
@@ -252,26 +252,26 @@ right_on: 右边的key</p>
 我的答案：<br>
 <code class="notranslate">select name 国家 from world where name like '%a%' and name like '%e%' and name like '%i%' and name like '%o%' and name like '%u%' and name not like '% %'</code><br>
 可以简化为？这里怎么简化呢</p>
-<p>##3、order by排序<br>
-默认升序（从小到大）</p>
+<h2>3、order by排序</h2>
+<p>默认升序（从小到大）</p>
 <p>例题：查询1984年所有获奖者的姓名和奖项科目。结果将诺贝尔化学奖和物理学奖排在最后，然后按照科目排序，再按照获奖者姓名排序<br>
 我的答案：<br>
 <code class="notranslate">select winner ,subject from nobel where yr = 1984 order by subject in ('chemistry','physics') , subject, winner</code> 这里的in的使用，让后面两个科目返回的值为1，默认排在0后面</p>
-<p>##4、limit</p>
-<p>##5、聚合函数和group by<br>
-例题：查询2013至2015年每年每个科目的获奖人数，结果按年份从大到小，人数从大到小排序<br>
+<h2>4、limit</h2>
+<h2>5、聚合函数和group by</h2>
+<p>例题：查询2013至2015年每年每个科目的获奖人数，结果按年份从大到小，人数从大到小排序<br>
 我的答案：<br>
 select yr, subject, count(winner) 获奖人数<br>
 from nobel<br>
 where yr between 2013 and 2015<br>
 group by yr,subject<br>
 order by yr desc,count(winner) desc</p>
-<p>##6、having和简单运行原理<br>
-having是聚合后筛选，where是聚合前筛选</p>
+<h2>6、having和简单运行原理</h2>
+<p>having是聚合后筛选，where是聚合前筛选</p>
 <p>例题：查询总人口数至少为3亿的大洲和其平均gdp，其中只有gdp高于200亿且人口数大于6000万或者gdp低于80亿且首都中含有三个a的国家的计入计算，最后按国家数从大到小排序，只显示第一行<br>
 <code class="notranslate">select continent, avg(gdp) 平均GDP from world where gdp&gt;=20000000000 and population&gt;=60000000 or gdp&lt;8000000000 and name like '%a%a%a%' group by continent having sum(population)&gt;=300000000 order by count(name) desc limit 1</code></p>
-<p>##7、其他常见函数<br>
-round(x,y)——四舍五入<br>
+<h2>7、其他常见函数</h2>
+<p>round(x,y)——四舍五入<br>
 concat(s1,s2,...)——连接字符串函数</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
