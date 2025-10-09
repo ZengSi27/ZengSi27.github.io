@@ -86,3 +86,20 @@ excel.drop_duplicates(subset='uid', keep = 'last', inplace = True )删除重复�
 subset='uid' 删除uid这列的重复的值
 keep = 'last' 仅保留最后一个值
  inplace = True 替换整个列表，false的话是不替换仅展示
+
+# Python学习第4天
+## 1.轴、合并与连接
+1.1关于轴：
+Columns（列，axis=1）自左向右
+Index（行，axis=0）自上向下
+
+1.2关于合并与连接
+pd.concat([excel, excel2], axis = 0) 两个表合并，按照自上而下的方向
+pd.merge(excel, excel2, how = 'inner', on = 'uid') 两个表合并
+on: 左右都需要有这个key
+left_on: 左边的key
+right_on: 右边的key
+
+参考视频课程链接：https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&vd_source=12234dcd5ca10446ab2cc18135e10a62&p=13
+
+

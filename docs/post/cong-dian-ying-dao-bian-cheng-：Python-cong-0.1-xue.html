@@ -43,7 +43,7 @@ if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于
 - open(路径，模式，encoding='utf-8')，模式：w（只读）、r（只写）
 
 read方法：用于读取txt，大文件不要用，占用过多内存。">
-<meta property="og:title" content="从电影到编程：Python学习第1周">
+<meta property="og:title" content="从电影到编程：Python从0.1学">
 <meta property="og:description" content="尝试在Github创建个人博客便于记录自己编程学习过程
 # Python学习第1天
 
@@ -78,9 +78,9 @@ if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于
 
 read方法：用于读取txt，大文件不要用，占用过多内存。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-xue-xi-di-1-zhou.html">
+<meta property="og:url" content="https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-cong-0.1-xue.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>从电影到编程：Python学习第1周</title>
+<title>从电影到编程：Python从0.1学</title>
 
 
 
@@ -113,7 +113,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">从电影到编程：Python学习第1周</h1>
+<h1 class="postTitle">从电影到编程：Python从0.1学</h1>
 <div class="title-right">
     <a href="https://ZengSi27.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -226,7 +226,19 @@ subset='uid' 删除uid这列的重复的值<br>
 keep = 'last' 仅保留最后一个值<br>
 inplace = True 替换整个列表，false的话是不替换仅展示</p>
 </li>
-</ul></div>
+</ul>
+<h1>Python学习第4天</h1>
+<h2>1.轴、合并与连接</h2>
+<p>1.1关于轴：<br>
+Columns（列，axis=1）自左向右<br>
+Index（行，axis=0）自上向下</p>
+<p>1.2关于合并与连接<br>
+pd.concat([excel, excel2], axis = 0) 两个表合并，按照自上而下的方向<br>
+pd.merge(excel, excel2, how = 'inner', on = 'uid') 两个表合并<br>
+on: 左右都需要有这个key<br>
+left_on: 左边的key<br>
+right_on: 右边的key</p>
+<p>参考视频课程链接：<a href="https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13" rel="nofollow">https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
