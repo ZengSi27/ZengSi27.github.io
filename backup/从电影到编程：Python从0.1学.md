@@ -164,5 +164,85 @@ order by count(name) desc
 limit 1`
 
 ## 7、其他常见函数
-round(x,y)——四舍五入
-concat(s1,s2,...)——连接字符串函数
+【数学函数】
+    round(x,y)——四舍五入函数
+
+【字符串函数】
+    concat(s1,s2,...)——连接字符串函数
+    replace(s,s1,s2)——替换函数
+    left(s,n)——从左截取字符串一部分的函数
+    right(s,n)——从右截取字符串一部分的函数
+    substring(s,n,len)——从指定位置截取字符串一部分的函数
+
+【数据类型转换函数】
+    cast(x as type)——转换数据类型的函数
+
+【日期时间函数】
+    year(date)——获取年的函数
+    month(date)——获取月的函数
+    day(date)——获取日的函数
+    date_add(date,interval expr type)——对指定起始时间进行加操作
+    date_sub(date,interval expr type)——对指定起始时间进行减操作
+    datediff(date1,date2)——计算两个日期之间间隔的天数
+    date_format(date,format)——将日期和时间格式化
+
+【条件判断函数】——根据满足不同条件，执行相应流程
+    if(expr,v1,v2)
+    case when
+        case expr when v1 then r1 [when v2 then r2] ...[else rn] end
+        case when v1 then r1 [when v2 then r2]...[else rn] end
+
+## 【高级语句】
+
+1. 窗口函数
+
+- 排序窗口函数
+
+- 偏移窗口函数 
+lag取原表上一个值
+lead取下一个值
+例题：（好好琢磨一下）
+查询意大利每周新增确诊数（显示每周一的数值 weekday(whn) = 0）
+最后显示国家名，标准日期（2020-01-27），每周新增人数
+按照截至时间排序
+点击链接https://sqlzoo.net/wiki/Window_LAG
+
+答案：
+select name, 
+date_format(whn,'%Y-%m-%d')date,
+(confirmed - lag(confirmed,1)over(partition by name order by whn))New
+from covid
+where name='Italy'
+and weekday(whn)=0
+order by whn
+
+
+2. 表连接
+
+- 内连接
+
+- 左连接
+- 右连接
+
+很变态的一道例题：
+点击链接https://sqlzoo.net/wiki/The_JOIN_operation（链接中标号13
+查询每场比赛，每个球队的得分情况，按照以下格式显示
+比赛日期 team1 得分1 team2 得分2
+<img width="471" height="186" alt="Image" src="https://github.com/user-attachments/assets/a37c094e-a5d0-4fa2-b4a8-6ae9c53ac94f" />
+最后按照举办时间（mdate）、赛事编号（matchid）、队伍1（team1）和队伍2（team2）排序
+
+答案：
+select
+ga.mdate
+,ga.team1
+,sum(case when ga.team1=go.teamid then 1 else 0 end) score1
+,ga.team2
+,sum(case when ga.team2=go.teamid then 1 else 0 end) score2
+from game ga
+left join goal go
+on ga.id = go.matchid
+group by ga.mdate,ga.team1,ga.team2
+order by ga.mdate, go.matchid, ga.team1, ga.team2
+
+
+3. 子查询（套娃）
