@@ -355,7 +355,26 @@ group by ga.mdate,ga.team1,ga.team2<br>
 order by ga.mdate, go.matchid, ga.team1, ga.team2</p>
 <ol start="3">
 <li>子查询（套娃）</li>
-</ol></div>
+</ol>
+<p>练习题：<br>
+点击链接<a href="https://sqlzoo.net/wiki/Window_LAG%EF%BC%88%E9%93%BE%E6%8E%A5%E4%B8%AD%E6%A0%87%E5%8F%B72%EF%BC%89%E6%B6%89%E5%8F%8A%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%9A" rel="nofollow">https://sqlzoo.net/wiki/Window_LAG（链接中标号2）涉及数据表：</a><br>
+查询德国和意大利每天新增治愈人数并从高到低排名，查询结果按国家名，截至日期（输出格式为'xxxx年xx月xx日'），新增治愈人数，按排名排序</p>
+<p>答案：<br>
+select<br>
+name<br>
+,日期<br>
+,每天新增治愈人数<br>
+,rank()over(partition by name order by 每天新增治愈人数 desc) 排名<br>
+from<br>
+(<br>
+select<br>
+name<br>
+,date_format(whn,'%Y年%m月%d日') 日期<br>
+,(recovered - lag(recovered,1)over(partition by name order by whn)) 每天新增治愈人数<br>
+from covid<br>
+where name in ('Germany','Italy')</p>
+<p>) re<br>
+order by 排名</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

@@ -246,3 +246,26 @@ order by ga.mdate, go.matchid, ga.team1, ga.team2
 
 
 3. 子查询（套娃）
+
+练习题：
+点击链接https://sqlzoo.net/wiki/Window_LAG（链接中标号2）涉及数据表：<covid>
+查询德国和意大利每天新增治愈人数并从高到低排名，查询结果按国家名，截至日期（输出格式为'xxxx年xx月xx日'），新增治愈人数，按排名排序
+
+答案：
+select
+name
+,日期
+,每天新增治愈人数
+,rank()over(partition by name order by 每天新增治愈人数 desc) 排名
+from
+(
+    select
+    name
+    ,date_format(whn,'%Y年%m月%d日') 日期
+    ,(recovered - lag(recovered,1)over(partition by name order by whn)) 每天新增治愈人数
+    from covid
+    where name in ('Germany','Italy')
+
+) re
+order by 排名
+
