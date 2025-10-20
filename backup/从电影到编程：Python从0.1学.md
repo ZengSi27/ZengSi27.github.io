@@ -117,31 +117,49 @@ right_on: 右边的key
 
 例题：查询既包含有所有元音字母（a,e,i,o,u），同时国家名中没有空格的国家，最后显示他们的名字
 我的答案：
-`select name 国家
+select name 国家
 from world
 where name like '%a%'
 and name like '%e%'
 and name like '%i%'
 and name like '%o%'
 and name like '%u%'
-and name not like '% %'`
+and name not like '% %'
 可以简化为？这里怎么简化呢
 
+正则表达式匹配操作符：REGEXP
+phone_number REGEXP '^[1-9][0-9]{2}-?[0-9]{3}-?[0-9]{4}$'
+^ 表示字符串开始
+$表示字符串结束
+[]表示 character set，结合-使用表示范围，eg: [1-9]表示1,2,3,4,5....8,9组成的集合
+{}为数量符，eg:[0-9]{2}表示搜寻'2个0-9中的任意字符'
+？为数量符合，表示0或1个, eg -?表示搜寻'0个或者1个字符 "-"
+
 ## 3、order by排序
-默认升序（从小到大）
+默认升序（从小到大）asc
 
 例题：查询1984年所有获奖者的姓名和奖项科目。结果将诺贝尔化学奖和物理学奖排在最后，然后按照科目排序，再按照获奖者姓名排序
 我的答案：
-`select
+select
 winner
 ,subject
 from nobel
 where yr = 1984
-order by subject in ('chemistry','physics') , subject, winner` 这里的in的使用，让后面两个科目返回的值为1，默认排在0后面
+order by subject in ('chemistry','physics') , subject, winner
+这里的in的使用，让后面两个科目返回的值为1，默认排在0后面
 
 ## 4、limit
+例题：查询人口数第4到第7的国家和人口
 
-## 5、聚合函数和group by
+limit n返回查询结果的前n行，那如何查询人口数第4到第7？
+limit x,n意味从x+1行开始返回n行
+那么第4到第7，共4行，就是在排序后使用limit 3,4
+写出代码
+order by population desc
+limit 3,4
+
+
+## 5、聚合函数(sum,max....)和group by
 例题：查询2013至2015年每年每个科目的获奖人数，结果按年份从大到小，人数从大到小排序
 我的答案：
 select yr, subject, count(winner) 获奖人数
@@ -154,14 +172,14 @@ order by yr desc,count(winner) desc
 having是聚合后筛选，where是聚合前筛选
 
 例题：查询总人口数至少为3亿的大洲和其平均gdp，其中只有gdp高于200亿且人口数大于6000万或者gdp低于80亿且首都中含有三个a的国家的计入计算，最后按国家数从大到小排序，只显示第一行
-`select continent, avg(gdp) 平均GDP
+select continent, avg(gdp) 平均GDP
 from world
 where gdp>=20000000000 and population>=60000000
 or gdp<8000000000 and name like '%a%a%a%'
 group by continent
 having sum(population)>=300000000
 order by count(name) desc
-limit 1`
+limit 1
 
 ## 7、其他常见函数
 【数学函数】
@@ -197,6 +215,10 @@ limit 1`
 1. 窗口函数
 
 - 排序窗口函数
+rank()over() ：跳跃式排序，高考排名方法，可以并列
+dense_rank()over()：并列连续，也可以并列，但下一位连续
+dense_rank()over()：不允许并列
+over窗口函数中可以有partition 和order by（排序窗口函数中必须有）这样的子句
 
 - 偏移窗口函数 
 lag取原表上一个值
