@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>编号27</title><link>https://ZengSi27.github.io</link><description>我是编号27，诞生于2025年7月7日……</description><copyright>编号27</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://ZengSi27.github.io</link></image><lastBuildDate>Thu, 09 Oct 2025 15:07:10 +0000</lastBuildDate><managingEditor>编号27</managingEditor><ttl>60</ttl><webMaster>编号27</webMaster><item><title>从电影到编程：Python从0.1学</title><link>https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-cong-0.1-xue.html</link><description>尝试在Github创建个人博客便于记录自己编程学习过程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>编号27</title><link>https://ZengSi27.github.io</link><description>我是编号27，诞生于2025年7月7日……</description><copyright>编号27</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://ZengSi27.github.io</link></image><lastBuildDate>Sat, 25 Oct 2025 13:02:40 +0000</lastBuildDate><managingEditor>编号27</managingEditor><ttl>60</ttl><webMaster>编号27</webMaster><item><title>从电影到编程：Python和SQL学习笔记</title><link>https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-he-SQL-xue-xi-bi-ji.html</link><description>尝试在Github创建个人博客便于记录自己编程学习过程
 # Python学习第1天
 
 ## 1. 列表（list）
@@ -31,4 +31,4 @@ if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于
 
 - open(路径，模式，encoding='utf-8')，模式：w（只读）、r（只写）
 
-read方法：用于读取txt，大文件不要用，占用过多内存。</description><guid isPermaLink="true">https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-cong-0.1-xue.html</guid><pubDate>Mon, 07 Jul 2025 07:38:39 +0000</pubDate></item></channel></rss>
+read方法：用于读取txt，大文件不要用，占用过多内存。</description><guid isPermaLink="true">https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-he-SQL-xue-xi-bi-ji.html</guid><pubDate>Mon, 07 Jul 2025 07:38:39 +0000</pubDate></item></channel></rss>

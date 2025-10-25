@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="尝试在Github创建个人博客便于记录自己编程学习过程
+# Python学习第1天
+
+## 1. 列表（list）
+append 添加元素
+remove 删除元素
+（关于以上‘方法’，是可以改变列表的）
+len函数：查看列表元素数量
+max函数/min函数：求最大/最小值
+sorted函数：排序
+
+关于查询
+列表第一个元素是0
+
+## 2. 字典/通讯录（dict）
+del 字典名 [ ] ：删除键和值
+键 in 字典名：查询该键是否存在于该字典
+
+# Python学习第2天
+round函数：小数点后几位
+.split（）：在括号内输入想要分隔的符号，如下划线，可将字符串分割成一个列表
+
+## 3.循环
+for 变量 in 序列：对于序列中的每个元素，进行操作
+range（3）：表示范围，生成0，1，2（左闭右开原则），常配合len函数在for循环中使用，例如 for i in range(len(变量))
+extend：并集，将一个列表追加在一个列表的后面，例如 history.extend(list)，把list追加在history后面
+if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于1的月份
+
+## 如何在python中读取txt文件？
+
+- open(路径，模式，encoding='utf-8')，模式：w（只读）、r（只写）
+
+read方法：用于读取txt，大文件不要用，占用过多内存。">
+<meta property="og:title" content="从电影到编程：Python和SQL学习笔记">
+<meta property="og:description" content="尝试在Github创建个人博客便于记录自己编程学习过程
+# Python学习第1天
+
+## 1. 列表（list）
+append 添加元素
+remove 删除元素
+（关于以上‘方法’，是可以改变列表的）
+len函数：查看列表元素数量
+max函数/min函数：求最大/最小值
+sorted函数：排序
+
+关于查询
+列表第一个元素是0
+
+## 2. 字典/通讯录（dict）
+del 字典名 [ ] ：删除键和值
+键 in 字典名：查询该键是否存在于该字典
+
+# Python学习第2天
+round函数：小数点后几位
+.split（）：在括号内输入想要分隔的符号，如下划线，可将字符串分割成一个列表
+
+## 3.循环
+for 变量 in 序列：对于序列中的每个元素，进行操作
+range（3）：表示范围，生成0，1，2（左闭右开原则），常配合len函数在for循环中使用，例如 for i in range(len(变量))
+extend：并集，将一个列表追加在一个列表的后面，例如 history.extend(list)，把list追加在history后面
+if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于1的月份
+
+## 如何在python中读取txt文件？
+
+- open(路径，模式，encoding='utf-8')，模式：w（只读）、r（只写）
+
+read方法：用于读取txt，大文件不要用，占用过多内存。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ZengSi27.github.io/post/cong-dian-ying-dao-bian-cheng-%EF%BC%9APython-he-SQL-xue-xi-bi-ji.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>从电影到编程：Python和SQL学习笔记</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">从电影到编程：Python和SQL学习笔记</h1>
+<div class="title-right">
+    <a href="https://ZengSi27.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/ZengSi27/ZengSi27.github.io/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>尝试在Github创建个人博客便于记录自己编程学习过程</p>
+<h1>Python学习第1天</h1>
+<h2>1. 列表（list）</h2>
+<p>append 添加元素<br>
+remove 删除元素<br>
+（关于以上‘方法’，是可以改变列表的）<br>
+len函数：查看列表元素数量<br>
+max函数/min函数：求最大/最小值<br>
+sorted函数：排序</p>
+<p>关于查询<br>
+列表第一个元素是0</p>
+<h2>2. 字典/通讯录（dict）</h2>
+<p>del 字典名 [ ] ：删除键和值<br>
+键 in 字典名：查询该键是否存在于该字典</p>
+<h1>Python学习第2天</h1>
+<p>round函数：小数点后几位<br>
+.split（）：在括号内输入想要分隔的符号，如下划线，可将字符串分割成一个列表</p>
+<h2>3.循环</h2>
+<p>for 变量 in 序列：对于序列中的每个元素，进行操作<br>
+range（3）：表示范围，生成0，1，2（左闭右开原则），常配合len函数在for循环中使用，例如 for i in range(len(变量))<br>
+extend：并集，将一个列表追加在一个列表的后面，例如 history.extend(list)，把list追加在history后面<br>
+if函数：可以用于筛选满足特定条件的元素，例如选出ROI大于1的月份</p>
+<h2>如何在python中读取txt文件？</h2>
+<ul>
+<li>open(路径，模式，encoding="utf-8")，模式：w（只读）、r（只写）</li>
+</ul>
+<p>read方法：用于读取txt，大文件不要用，占用过多内存。read之后记得close<br>
+补充：read（数字），读取多少字节；readline（）读取行；readlines读取所有行</p>
+<ul>
+<li>with open(路径) as f：无需close来结束调用，节约内存</li>
+</ul>
+<h2>4.自定义函数</h2>
+<ul>
+<li>def：根据需求，确定有无参数，有无返回值（return）</li>
+</ul>
+<h1>Python学习第3天——Pandas</h1>
+<h2>1.如何读取和导出数据</h2>
+<p>csv/tsv/txt、excel、mysql三种文件读取方法不同</p>
+<ul>
+<li>1.1 csv<br>
+fpath =( "路径")<br>
+同一文件夹下直接输入文件名即可读取</li>
+</ul>
+<p>pd.read_csv(fpath) 读取数据<br>
+, converters={'uid' : str}加在fpath后面可以把uid这列按照“字符串”类型读取<br>
+另一种方式是用 .astype(str) 方法</p>
+<p>.head() 查看前几行<br>
+.shape 查看形状（行数、列数）<br>
+.columns 查看列名列表<br>
+.index 查看索引列<br>
+.dtypes 查看数据类型</p>
+<ul>
+<li>
+<p>1.2 excel<br>
+pd.read_excel(fpath)</p>
+</li>
+<li>
+<p>1.3 mysql<br>
+pd.read_sql("", )</p>
+</li>
+<li>
+<p>1.4导出数据<br>
+.to_excel('test excel.xlsx', index = False)导出到同一文件夹下，index = False 是删除第一列索引列</p>
+</li>
+</ul>
+<h2>2.数据结构（Series和Dataframe）</h2>
+<p>Series:一维数据，一行或一列，可以理解为字典<br>
+DataFrame:二维数据，有行有列，可以理解为excel</p>
+<h2>3.查询数据</h2>
+<p>excel['id']查询id这一列的数据，类似python字典<br>
+excel.iloc[1]查询第二行数据</p>
+<ul>
+<li>
+<p>3.1 df.loc查询数据的方法<br>
+1.使用单个label值查询<br>
+2.使用值列表批量查询<br>
+3.使用区间[:]范围查询<br>
+补充：df.loc[1,3] 查询行，包括3（与python不同）<br>
+4.使用条件表达式查询（布尔索引）<br>
+excel[excel['progress']&gt;= 100000 ]会返回一个符合条件的dataframe<br>
+5.调用函数查询</p>
+</li>
+<li>
+<p>数据筛选的补充<br>
+excel.drop_duplicates(subset='uid', keep = 'last', inplace = True )删除重复值<br>
+subset='uid' 删除uid这列的重复的值<br>
+keep = 'last' 仅保留最后一个值<br>
+inplace = True 替换整个列表，false的话是不替换仅展示</p>
+</li>
+</ul>
+<h1>Python学习第4天</h1>
+<h2>1.轴、合并与连接</h2>
+<p>1.1关于轴：<br>
+Columns（列，axis=1）自左向右<br>
+Index（行，axis=0）自上向下</p>
+<p>1.2关于合并与连接<br>
+pd.concat([excel, excel2], axis = 0) 两个表合并，按照自上而下的方向<br>
+pd.merge(excel, excel2, how = 'inner', on = 'uid') 两个表合并<br>
+on: 左右都需要有这个key<br>
+left_on: 左边的key<br>
+right_on: 右边的key</p>
+<p>参考视频课程链接：<a href="https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13" rel="nofollow">https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13</a></p>
+<h1>SQL从0开始</h1>
+<h2>1、select和from</h2>
+<p>语法结构：select--from--where--group by--having--order by--limit<br>
+运行顺序：from--where--group by--having--order by--limit--select（弟中弟）</p>
+<h2>2、where</h2>
+<p>用于限定from的对象，可用数学运算和逻辑运算符号（需要注意in的用法）</p>
+<p>模糊查询：<br>
+第一种是 like 'C%ia' 寻找C字母开头，ia字母结尾的国家名称<br>
+第二种是占位符 like '_t%' 查询国家名中第二个字符为't'的国家</p>
+<p>例题：查询既包含有所有元音字母（a,e,i,o,u），同时国家名中没有空格的国家，最后显示他们的名字<br>
+我的答案：<br>
+select name 国家<br>
+from world<br>
+where name like '%a%'<br>
+and name like '%e%'<br>
+and name like '%i%'<br>
+and name like '%o%'<br>
+and name like '%u%'<br>
+and name not like '% %'<br>
+可以简化为？这里怎么简化呢</p>
+<p>正则表达式匹配操作符：REGEXP<br>
+phone_number REGEXP '^[1-9][0-9]{2}-?[0-9]{3}-?[0-9]{4}$'<br>
+^ 表示字符串开始<br>
+$表示字符串结束<br>
+[]表示 character set，结合-使用表示范围，eg: [1-9]表示1,2,3,4,5....8,9组成的集合<br>
+{}为数量符，eg:[0-9]{2}表示搜寻'2个0-9中的任意字符'<br>
+？为数量符合，表示0或1个, eg -?表示搜寻'0个或者1个字符 "-"</p>
+<h2>3、order by排序</h2>
+<p>默认升序（从小到大）asc</p>
+<p>例题：查询1984年所有获奖者的姓名和奖项科目。结果将诺贝尔化学奖和物理学奖排在最后，然后按照科目排序，再按照获奖者姓名排序<br>
+我的答案：<br>
+select<br>
+winner<br>
+,subject<br>
+from nobel<br>
+where yr = 1984<br>
+order by subject in ('chemistry','physics') , subject, winner<br>
+这里的in的使用，让后面两个科目返回的值为1，默认排在0后面</p>
+<h2>4、limit</h2>
+<p>例题：查询人口数第4到第7的国家和人口</p>
+<p>limit n返回查询结果的前n行，那如何查询人口数第4到第7？<br>
+limit x,n意味从x+1行开始返回n行<br>
+那么第4到第7，共4行，就是在排序后使用limit 3,4<br>
+写出代码<br>
+order by population desc<br>
+limit 3,4</p>
+<h2>5、聚合函数(sum,max....)和group by</h2>
+<p>例题：查询2013至2015年每年每个科目的获奖人数，结果按年份从大到小，人数从大到小排序<br>
+我的答案：<br>
+select yr, subject, count(winner) 获奖人数<br>
+from nobel<br>
+where yr between 2013 and 2015<br>
+group by yr,subject<br>
+order by yr desc,count(winner) desc</p>
+<h2>6、having和简单运行原理</h2>
+<p>having是聚合后筛选，where是聚合前筛选</p>
+<p>例题：查询总人口数至少为3亿的大洲和其平均gdp，其中只有gdp高于200亿且人口数大于6000万或者gdp低于80亿且首都中含有三个a的国家的计入计算，最后按国家数从大到小排序，只显示第一行<br>
+select continent, avg(gdp) 平均GDP<br>
+from world<br>
+where gdp&gt;=20000000000 and population&gt;=60000000<br>
+or gdp&lt;8000000000 and name like '%a%a%a%'<br>
+group by continent<br>
+having sum(population)&gt;=300000000<br>
+order by count(name) desc<br>
+limit 1</p>
+<h2>7、其他常见函数</h2>
+<p>【数学函数】<br>
+round(x,y)——四舍五入函数</p>
+<p>【字符串函数】<br>
+concat(s1,s2,...)——连接字符串函数<br>
+replace(s,s1,s2)——替换函数<br>
+left(s,n)——从左截取字符串一部分的函数<br>
+right(s,n)——从右截取字符串一部分的函数<br>
+substring(s,n,len)——从指定位置截取字符串一部分的函数</p>
+<p>【数据类型转换函数】<br>
+cast(x as type)——转换数据类型的函数</p>
+<p>【日期时间函数】<br>
+year(date)——获取年的函数<br>
+month(date)——获取月的函数<br>
+day(date)——获取日的函数<br>
+date_add(date,interval expr type)——对指定起始时间进行加操作<br>
+date_sub(date,interval expr type)——对指定起始时间进行减操作<br>
+datediff(date1,date2)——计算两个日期之间间隔的天数<br>
+date_format(date,format)——将日期和时间格式化</p>
+<p>【条件判断函数】——根据满足不同条件，执行相应流程<br>
+if(expr,v1,v2)<br>
+case when<br>
+case expr when v1 then r1 [when v2 then r2] ...[else rn] end<br>
+case when v1 then r1 [when v2 then r2]...[else rn] end</p>
+<h2>【高级语句】</h2>
+<ol>
+<li>窗口函数</li>
+</ol>
+<ul>
+<li>
+<p>排序窗口函数<br>
+rank()over() ：跳跃式排序，高考排名方法，可以并列<br>
+dense_rank()over()：并列连续，也可以并列，但下一位连续<br>
+dense_rank()over()：不允许并列<br>
+over窗口函数中可以有partition 和order by（排序窗口函数中必须有）这样的子句</p>
+</li>
+<li>
+<p>偏移窗口函数<br>
+lag取原表上一个值<br>
+lead取下一个值<br>
+例题：（好好琢磨一下）<br>
+查询意大利每周新增确诊数（显示每周一的数值 weekday(whn) = 0）<br>
+最后显示国家名，标准日期（2020-01-27），每周新增人数<br>
+按照截至时间排序<br>
+点击链接<a href="https://sqlzoo.net/wiki/Window_LAG" rel="nofollow">https://sqlzoo.net/wiki/Window_LAG</a></p>
+</li>
+</ul>
+<p>答案：<br>
+select name,<br>
+date_format(whn,'%Y-%m-%d')date,<br>
+(confirmed - lag(confirmed,1)over(partition by name order by whn))New<br>
+from covid<br>
+where name='Italy'<br>
+and weekday(whn)=0<br>
+order by whn</p>
+<ol start="2">
+<li>表连接</li>
+</ol>
+<ul>
+<li>
+<p>内连接</p>
+</li>
+<li>
+<p>左连接</p>
+</li>
+<li>
+<p>右连接</p>
+</li>
+</ul>
+<p>很变态的一道例题：<br>
+点击链接<a href="https://sqlzoo.net/wiki/The_JOIN_operation%EF%BC%88%E9%93%BE%E6%8E%A5%E4%B8%AD%E6%A0%87%E5%8F%B713" rel="nofollow">https://sqlzoo.net/wiki/The_JOIN_operation（链接中标号13</a><br>
+查询每场比赛，每个球队的得分情况，按照以下格式显示<br>
+比赛日期 team1 得分1 team2 得分2<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/a37c094e-a5d0-4fa2-b4a8-6ae9c53ac94f"><img width="471" height="186" alt="Image" src="https://github.com/user-attachments/assets/a37c094e-a5d0-4fa2-b4a8-6ae9c53ac94f" style="max-width: 100%; height: auto; max-height: 186px;"></a><br>
+最后按照举办时间（mdate）、赛事编号（matchid）、队伍1（team1）和队伍2（team2）排序</p>
+<p>答案：<br>
+select<br>
+ga.mdate<br>
+,ga.team1<br>
+,sum(case when ga.team1=go.teamid then 1 else 0 end) score1<br>
+,ga.team2<br>
+,sum(case when ga.team2=go.teamid then 1 else 0 end) score2<br>
+from game ga<br>
+left join goal go<br>
+on ga.id = go.matchid<br>
+group by ga.mdate,ga.team1,ga.team2<br>
+order by ga.mdate, go.matchid, ga.team1, ga.team2</p>
+<ol start="3">
+<li>子查询（套娃）</li>
+</ol>
+<p>练习题：<br>
+点击链接<a href="https://sqlzoo.net/wiki/Window_LAG%EF%BC%88%E9%93%BE%E6%8E%A5%E4%B8%AD%E6%A0%87%E5%8F%B72%EF%BC%89%E6%B6%89%E5%8F%8A%E6%95%B0%E6%8D%AE%E8%A1%A8%EF%BC%9A" rel="nofollow">https://sqlzoo.net/wiki/Window_LAG（链接中标号2）涉及数据表：</a><br>
+查询德国和意大利每天新增治愈人数并从高到低排名，查询结果按国家名，截至日期（输出格式为'xxxx年xx月xx日'），新增治愈人数，按排名排序</p>
+<p>答案：<br>
+select<br>
+name<br>
+,日期<br>
+,每天新增治愈人数<br>
+,rank()over(partition by name order by 每天新增治愈人数 desc) 排名<br>
+from<br>
+(<br>
+select<br>
+name<br>
+,date_format(whn,'%Y年%m月%d日') 日期<br>
+,(recovered - lag(recovered,1)over(partition by name order by whn)) 每天新增治愈人数<br>
+from covid<br>
+where name in ('Germany','Italy')</p>
+<p>) re<br>
+order by 排名</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://ZengSi27.github.io">编号27</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","ZengSi27/ZengSi27.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
