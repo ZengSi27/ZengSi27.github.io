@@ -230,17 +230,23 @@ keep = 'last' 仅保留最后一个值<br>
 inplace = True 替换整个列表，false的话是不替换仅展示</p>
 </li>
 </ul>
-<h1>Python学习第4天</h1>
+<h1>Python学习第4天——Pandas</h1>
 <h2>1.轴、合并与连接</h2>
 <p>1.1关于轴：<br>
-Columns（列，axis=1）自左向右<br>
-Index（行，axis=0）自上向下</p>
+Columns（单位为”列“，axis=1）自左向右<br>
+Index（单位为”行“，axis=0）自上向下</p>
 <p>1.2关于合并与连接<br>
 pd.concat([excel, excel2], axis = 0) 两个表合并，按照自上而下的方向<br>
 pd.merge(excel, excel2, how = 'inner', on = 'uid') 两个表合并<br>
 on: 左右都需要有这个key<br>
 left_on: 左边的key<br>
 right_on: 右边的key</p>
+<p>1.3排序<br>
+sort_values</p>
+<p>1.4匿名函数<br>
+lambda:可以让自定义函数代码更简洁优雅</p>
+<p>1.5分组、聚合、转换<br>
+group by 同sql</p>
 <p>参考视频课程链接：<a href="https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13" rel="nofollow">https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13</a></p>
 <h1>SQL从0开始</h1>
 <h2>1、select和from</h2>
