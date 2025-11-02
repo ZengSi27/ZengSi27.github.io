@@ -248,6 +248,34 @@ lambda:可以让自定义函数代码更简洁优雅</p>
 <p>1.5分组、聚合、转换<br>
 group by 同sql</p>
 <p>参考视频课程链接：<a href="https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13" rel="nofollow">https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&amp;vd_source=12234dcd5ca10446ab2cc18135e10a62&amp;p=13</a></p>
+<h2>补全计划（来源于python数据分析教科书）：</h2>
+<ol>
+<li>内包表記</li>
+</ol>
+<p>names = ['spam', 'ham', 'eggs']<br>
+lens = []<br>
+for name in names:<br>
+lens.append(len(name))<br>
+和以下的代码一样，下面的更简洁<br>
+[len(name) for name in names]<br>
+换成花括号则是セット<br>
+{len(name) for name in names}<br>
+Out：{3,4}</p>
+<p>词典则是：<br>
+{name: len(name) for name in names}</p>
+<ol start="2">
+<li>文字列操作（方法）<br>
+.upper/.lower/.title 大写、小写、首字母大写<br>
+.repalce( ) 文字列置换<br>
+.split( )分割后变成一个列表<br>
+.strip( )删除左右空白<br>
+.endwith( )确认文件后缀格式<br>
+.isdigit( )确认是否为数字列</li>
+</ol>
+<p>si = 'hello python'<br>
+'py' in s1 确认文字列中是否存在<br>
+'-'.join() 多个文字列用 - 连接在一起<br>
+;</p>
 <h1>SQL从0开始</h1>
 <h2>1、select和from</h2>
 <p>语法结构：select--from--where--group by--having--order by--limit<br>

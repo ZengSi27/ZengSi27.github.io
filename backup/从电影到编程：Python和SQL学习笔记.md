@@ -112,6 +112,35 @@ group by 同sql
 
 参考视频课程链接：https://www.bilibili.com/video/BV1UJ411A7Fs?spm_id_from=333.788.videopod.episodes&vd_source=12234dcd5ca10446ab2cc18135e10a62&p=13
 
+## 补全计划（来源于python数据分析教科书）：
+
+1. 内包表記
+
+names = ['spam', 'ham', 'eggs']
+lens = []
+for name in names:
+    lens.append(len(name))
+和以下的代码一样，下面的更简洁
+[len(name) for name in names]
+换成花括号则是セット
+{len(name) for name in names}
+Out：{3,4}
+
+词典则是：
+{name: len(name) for name in names}
+
+2. 文字列操作（方法）
+.upper/.lower/.title 大写、小写、首字母大写
+.repalce( ) 文字列置换
+.split( )分割后变成一个列表
+.strip( )删除左右空白
+.endwith( )确认文件后缀格式
+.isdigit( )确认是否为数字列
+
+si = 'hello python'
+'py' in s1 确认文字列中是否存在
+'-'.join() 多个文字列用 - 连接在一起
+;
 
 # SQL从0开始
 ## 1、select和from
