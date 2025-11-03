@@ -143,6 +143,31 @@ si = 'hello python'
 '-'.join() 多个文字列用 - 连接在一起
 
 ### 二、Numpy基础
+
+1. 数组的属性——array
+.shape 查询行列数
+.ndim 查询维度
+.size 查询元素数量
+.dtype 查询元素类型（int32......） .astype 可以变换元素类型
+.reshape 变换数组维度，另外可以用newaxis来增加维度
+.ravel/.flatten 降维操作，ravel是改变原数组的元素值；flatten则是copy出一个新的表，修改元素值并不影响原表
+
+2. 如何创建数组？
+np.arrange( )
+np.ones( ) 创建全是1的数组
+np.ones_like( ) 创建形状相同的全是1的数组，把ones换成empty、full、zeros同理
+np.random.randn( ) 创建随机数的数组
+
+3. 数组的合并与分割，置换
+.concatenate( ) axis=1按列合并/axis=0按行合并
+.vstack/row_stack 按照行合并
+.hstack/column_stack 按照列合并
+
+.vsplit 按照行分割
+.hsplit 按照列分割
+
+.T 可以让2x3数组分成3x2数组
+
 ### 三、Pandas基础
 
 # SQL从0开始
