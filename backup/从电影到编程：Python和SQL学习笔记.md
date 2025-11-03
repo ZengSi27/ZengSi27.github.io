@@ -114,6 +114,7 @@ group by 同sql
 
 ## 补全计划（来源于python数据分析教科书）：
 
+### 一、Python基础
 1. 内包表記
 
 names = ['spam', 'ham', 'eggs']
@@ -140,7 +141,9 @@ Out：{3,4}
 si = 'hello python'
 'py' in s1 确认文字列中是否存在
 '-'.join() 多个文字列用 - 连接在一起
-;
+
+### 二、Numpy基础
+### 三、Pandas基础
 
 # SQL从0开始
 ## 1、select和from
